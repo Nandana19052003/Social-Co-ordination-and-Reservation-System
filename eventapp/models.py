@@ -21,9 +21,10 @@ class Booking(models.Model):
 
     cus_name = models.CharField(max_length=100)
     cus_ph = models.CharField(max_length=15)
-    name = models.CharField(max_length=100)  # Event name
+    name=models.ForeignKey(Event,on_delete=models.CASCADE)
     booking_date = models.DateField()
-    venue = models.CharField(max_length=100, choices=VENUE_CHOICES)
+    venue = models.CharField(max_length=100, choices=VENUE_CHOICES, default="Orchid Ballroom")
+
 
     def __str__(self):
         return self.cus_name
