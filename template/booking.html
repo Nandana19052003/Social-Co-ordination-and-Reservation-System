@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Booking
+{% endblock %}
+
+{% block content %}
+<div class="container p-4 mt-5" style="max-width: 600px; background: #f8f9fa; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+  <h1 class="text-center mb-4" style="color: #6a0dad; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    🌟 Book Your Event 🌟
+  </h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    
+    <div class="form-group mb-3">
+      {{ form.non_field_errors }}
+      {% for field in form %}
+        <div class="mb-3">
+          {{ field.label_tag }}
+          {{ field }}
+          {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+          {% endif %}
+          {{ field.errors }}
+        </div>
+      {% endfor %}
+    </div>
+
+    <button class="btn btn-primary w-100 py-2" style="border-radius: 25px; background: linear-gradient(90deg, #e040fb, #7b1fa2); border: none; font-size: 1.2rem; transition: background 0.3s ease;">
+      Book Now
+    </button>
+  </form>
+</div>
+
+<style>
+  .form-group label {
+    font-weight: bold;
+    color: #6a0dad;
+  }
+
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #7b1fa2;
+    box-shadow: 0 0 10px rgba(123, 31, 162, 0.2);
+    outline: none;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(90deg, #7b1fa2, #e040fb);
+    transform: scale(1.05);
+  }
+
+  h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #7b1fa2;
+    margin: 10px auto 0;
+    border-radius: 5px;
+  }
+</style>
+{% endblock %}

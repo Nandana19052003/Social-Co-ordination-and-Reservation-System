@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/stylecontact.css' %}">
+  <style>
+    body {
+      background-color: #f0f4f8;  /* Light background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #6a0dad;  /* Stylish purple title */
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-box label {
+      font-weight: bold;
+      color: #555;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .input-box input, .input-box textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      resize: none;
+    }
+
+    .input-box input:focus, .input-box textarea:focus {
+      border-color: #6a0dad;
+      box-shadow: 0 0 8px rgba(106, 13, 173, 0.3);
+      outline: none;
+    }
+
+    .button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #8e44ad, #9b59b6);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(90deg, #9b59b6, #8e44ad);
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      margin-top: 20px;
+      color: #555;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .highlight {
+      color: #8e44ad;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">📞 Contact Us 📧</div>
+    <div class="content">
+      <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        <div class="input-box">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-box">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-box">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+        <div class="input-box">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="button">Send Message</button>
+      </form>
+      
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p>📍 <span class="highlight">Address:</span> 123 Main Street, Your City</p>
+        <p>☎️ <span class="highlight">Phone:</span> +123 456 7890</p>
+        <p>✉️ <span class="highlight">Email:</span> contact@yourcompany.com</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

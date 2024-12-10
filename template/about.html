@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/styleabout.css' %}">
+  <style>
+    body {
+      background-color: #f0f4f8;  /* Light background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      max-width: 700px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #6a0dad;  /* Stylish purple title */
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      color: #8e44ad;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(90deg, #8e44ad, #9b59b6);
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(90deg, #9b59b6, #8e44ad);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">🌟 About Us 🌟</div>
+    <div class="content">
+      <p>Welcome to <span class="highlight">Your Company</span>! We are committed to providing exceptional services and creating memorable experiences. Our mission is to <span class="highlight">empower our clients</span> with innovative solutions and top-notch support.</p>
+      <p>Our team of dedicated professionals works tirelessly to ensure the highest quality in everything we do. We believe in <span class="highlight">collaboration, creativity, and integrity</span> as our core values.</p>
+      <a href="{% url 'index' %}" class="button">Go to Home</a>
+    </div>
+  </div>
+</body>
+</html>
