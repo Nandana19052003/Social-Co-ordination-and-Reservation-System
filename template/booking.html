@@ -12,11 +12,13 @@ Booking
   <form action="" method="POST">
     {% csrf_token %}
     
-    <div class="form-group mb-3">
+    <div class="form-group">
       {{ form.non_field_errors }}
+
+      <!-- Render all form fields -->
       {% for field in form %}
-        <div class="mb-3">
-          {{ field.label_tag }}
+        <div class="mb-4">
+          <label for="{{ field.id_for_label }}" style="font-weight: bold; color: #6a0dad;">{{ field.label }}</label>
           {{ field }}
           {% if field.help_text %}
             <small class="form-text text-muted">{{ field.help_text }}</small>
@@ -38,7 +40,7 @@ Booking
     color: #6a0dad;
   }
 
-  input[type="text"], input[type="email"], textarea {
+  input[type="text"], input[type="email"], input[type="date"], select, textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
@@ -47,7 +49,7 @@ Booking
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
-  input:focus, textarea:focus {
+  input:focus, textarea:focus, select:focus {
     border-color: #7b1fa2;
     box-shadow: 0 0 10px rgba(123, 31, 162, 0.2);
     outline: none;

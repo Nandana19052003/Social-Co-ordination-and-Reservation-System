@@ -11,10 +11,21 @@ class Event(models.Model):
         return self.name
 
 class Booking(models.Model):
-    cus_name=models.CharField(max_length=55)
-    cus_ph=models.CharField(max_length=12)
-    name=models.ForeignKey(Event,on_delete=models.CASCADE)
-    booking_date=models.DateField()
-    booked_on=models.DateField(auto_now=True)
+    VENUE_CHOICES = [
+        ("Orchid Ballroom", "The Orchid Ballroom"),
+        ("Grand Oak", "Grand Oak Banquet"),
+        ("Lotus Hall", "Lotus Event Hall"),
+        ("Royal Crown", "The Royal Crown"),
+        ("Blue Pearl", "Blue Pearl Pavilion"),
+    ]
+
+    cus_name = models.CharField(max_length=100)
+    cus_ph = models.CharField(max_length=15)
+    name = models.CharField(max_length=100)  # Event name
+    booking_date = models.DateField()
+    venue = models.CharField(max_length=100, choices=VENUE_CHOICES)
+
+    def __str__(self):
+        return self.cus_name
 
 
