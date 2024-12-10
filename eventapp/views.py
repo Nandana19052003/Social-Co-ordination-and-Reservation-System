@@ -25,4 +25,3 @@ def booking(request):
     return render(request,'booking.html',dict_form)
 def contact(request):
     return render(request,'contact.html')
-
