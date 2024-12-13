@@ -1,22 +1,12 @@
 {% extends 'base.html' %}
-
+{% block title %}
+reg
+{% endblock %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
   <style>
-    body {
-      background-color: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
+ 
     .container {
       background-color: #ffffff;
       border-radius: 15px;
@@ -88,9 +78,7 @@
       margin-top: 15px;
     }
   </style>
-</head>
-<body>
-  <div class="container">
+ <div class="container">
     <div class="title">🌟 Registration 🌟</div>
     <div class="content">
         <form method="post" action="">
@@ -129,5 +117,4 @@
         {% endif %}
         
   </div>
-</body>
-</html>
+  {% endblock %}
