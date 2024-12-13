@@ -11,7 +11,7 @@ This is a Django-based web application that allows users to view and book events
 ## Technologies Used
 
 - **Django**: Web framework used for backend development.
-- **SQLite**: Database used for local development.
+- **PostgreSQL**: Database used for local development.
 - **HTML/CSS**: Frontend structure and styling.
 - **Bootstrap**: CSS framework used for responsive design.
 - **Python**: Programming language for backend development.

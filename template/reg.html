@@ -1,10 +1,12 @@
+{% extends 'base.html' %}
+
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/styleuser.css' %}">
   <style>
     body {
       background-color: #f0f4f8;
@@ -109,9 +111,11 @@
                 <label>Confirm Password:</label>
                 <input type="password" name="confirmpassword" required>
             </div>
+            
             <div class="button">
                 <input type="submit" value="Sign Up">
             </div>
+            
             
         </form>
         
