@@ -1,4 +1,4 @@
-# Social Coordination and Reservation System
+# Social Event Coordination and Reservation System
 
 This is a Django-based web application that allows users to view and book events at various venues. The application is designed to simplify the event management and booking process.
 
