@@ -1,10 +1,12 @@
 {% load static %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'static/styles.css' %}">
+{% block title %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/stylelog.css' %}">
   <style>
     body {
       background-color: #f0f4f8;  /* Light background for contrast */
@@ -122,3 +124,4 @@
   </div>
 </body>
 </html>
+{% endblock %}

@@ -15,27 +15,18 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-<style>
-  .nav li a{
-    color: rgb(102, 14, 164);
-    font-size: 20px;
-  }
-  .navbar-brand{
-    color: rgb(102, 14, 164);
-    font-size: 25px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-</style>
+    <link rel="stylesheet" type="text/css" href="{% static 'static/styles.css' %}">
+
 </head>
 <body>
     <!-- navbar start -->
     <nav class="navbar navbar-bg-light">
   <div class="container-fluid ">
     <div class="navbar-header ">
-      <a class="navbar-brand" href="index.html">NewGenEvents</a>
+      <a class="navbar-brand" >NewGenEvents</a>
     </div>
     <ul class="nav navbar-nav mx-auto ">
-      <li class="active"><a href="{% url 'index' %}">Home</a></li>
+      <li ><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about' %}">About</a></li>
       <li><a href="{% url 'events' %}">Events</a></li>
       <li><a href="{% url 'booking' %}">Booking</a></li>
